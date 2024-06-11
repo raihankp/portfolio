@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Asli Tiket",
+    "company": "Project in Software Engineering Subject",
+    "detail": "Asli Tiket is a a website application where we provide access to discover a dummy event/show and buy dummy ticket.",
+    "tech-stack": ["Thymeleaf", "Spring Boot", "Bootstrap", "Google Compute Engine"],
+    "link": "https://gitlab.cs.ui.ac.id/atet/asli-tiket"
+  },
+  {
+    "name": "Sehat Terus",
+    "company": "Project in Platform-Based Programming Subject",
+    "detail": "Sehat Terus is a website application in Covid-19 growth statistics, information, and summaries to spread awareness using",
+    "tech-stack": ["Django", "Bootstrap", "Heroku"],
+    "link": "https://github.com/amiransht/sehat-terus"
+  }
+]

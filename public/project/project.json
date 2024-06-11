@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Point of Sales",
+    "company": "Megalogic",
+    "detail": "Point of Sales is a website application for transactional operations and transaction data as a retailer equipped with built-in Machine Learning model. This website helps retailer to enhance their business with three machine learning models in a simple chart that have the capabilities to analyze customer behavior, perform market basket analysis, segment customers, and predict customer churn.",
+    "tech-stack": ["React.js", "Next.js", "Fast API", "Tailwind CSS", "Chakra UI", "Google Cloud Run"],
+    "images": ["/project/pointofsales/dashboard.png", "/project/pointofsales/customer-page.png", "/project/pointofsales/order-page.png"],
+    "link": "https://pointofsales-02-at2vbh6rta-as.a.run.app"
+  },
+  {
+    "name": "Lontar Reborn",
+    "company": "Fasilkom UI",
+    "detail": "Lontar Reborn is a modernized online library that were already made by Faculty of Computer Science in University of Indonesia. We Upgraded it from Java 1.4 to the Java 17 with Spring Boot as the RestAPI and Next.js as the Frontend. I have successfully added new features such as user login, digital borrowing, online reading, and reading list features to assist students in finding and borrowing documents.",
+    "tech-stack": ["React.js", "Next.js", "Spring Boot", "Tailwind CSS", "Chakra UI", "Google Compute Engine"],
+    "images": ["/project/lontar-reborn/home.png", "/project/lontar-reborn/detail-koleksi.png", "/project/lontar-reborn/reader-online.png", "/project/lontar-reborn/reading-list.png"],
+    "link": "https://lontar-digital-mti.cs.ui.ac.id"
+  }
+]
