@@ -5,13 +5,13 @@ import React from "react";
 const NavbarComponent = () => {
   return (
     <nav className="bg-black border-0 border-white py-4 sticky">
-      <div className="max-w-screen-xl mx-auto px-8 flex flex-row justify-between items-center">
+      <div className="max-w-screen-xl mx-auto px-8 flex flex-row justify-center md:justify-between items-center">
         <div id="navbar-brand" className="">
-          <a href="" className="text-3xl">
+          <a href="/" className="text-3xl">
             RKP
           </a>
         </div>
-        <div id="navbar-link" className="flex flex-row gap-14">
+        <div id="navbar-link" className="hidden md:flex md:flex-row gap-14">
           <a href="#profile" className="text-xl">
             Profile
           </a>
