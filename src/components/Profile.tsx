@@ -14,8 +14,8 @@ const Profile = () => {
         <motion.h1 initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} className="text-5xl font-semibold">
           Hello! I&apos;m Raihan
         </motion.h1>
-        <motion.p className="text-lg text-justify" initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.75 }}>
-          A 21 years old undergraduate student majoring in Commotion.uter Science, University of Indonesia. Interested in Software Engineer and Website Developer. Skilled in developing website applications from past project.
+        <motion.p className="text-lg" initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.75 }}>
+          A 21 years old undergraduate student majoring in Computer Science, University of Indonesia. Interested in Software Engineer and Website Developer. Skilled in developing website applications from past project.
         </motion.p>
         <MotionButton variant="light" href="#contact" className="font-semibold px-4 py-2" initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 1 }}>
           Contact Me!
