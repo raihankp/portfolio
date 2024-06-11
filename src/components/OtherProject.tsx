@@ -9,7 +9,7 @@ const OtherProject = () => {
   return (
     <div className="flex flex-col border-0 border-blue-500 items-center gap-8">
       <h1 className="text-3xl font-bold">Small Project</h1>
-      <div className="flex flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8">
         {otherProjectData.map((project, index) => (
           <Card key={index} className="bg-gray-900 text-white rounded-2xl p-2" style={{ width: "20rem" }}>
             <Card.Body className="flex flex-col flex-grow">

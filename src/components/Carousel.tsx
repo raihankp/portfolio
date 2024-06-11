@@ -9,10 +9,10 @@ interface CarouselComponentProps {
 
 const CarouselComponent = ({ images }: CarouselComponentProps) => {
   return (
-    <Carousel className="border-0 border-red-500 h-72 w-full ">
+    <Carousel className="border-0 border-red-500 h-60 md:h-72 w-full ">
       {images.map((imageSrc, index) => (
         <Carousel.Item key={index}>
-          <img src={imageSrc} className="h-72 w-full d-block object-cover object-top rounded-lg" alt="Profile Pict" />
+          <img src={imageSrc} className="h-60 md:h-72 w-full d-block object-cover object-top rounded-lg" alt="Profile Pict" />
         </Carousel.Item>
       ))}
     </Carousel>
