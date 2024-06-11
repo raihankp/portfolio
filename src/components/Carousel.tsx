@@ -10,8 +10,8 @@ interface CarouselComponentProps {
 const CarouselComponent = ({ images }: CarouselComponentProps) => {
   return (
     <Carousel className="border-0 border-red-500 h-72 w-full ">
-      {images.map((imageSrc) => (
-        <Carousel.Item>
+      {images.map((imageSrc, index) => (
+        <Carousel.Item key={index}>
           <img src={imageSrc} className="h-72 w-full d-block object-cover object-top rounded-lg" alt="Profile Pict" />
         </Carousel.Item>
       ))}
