@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 
 const Profile = () => {
   return (
-    <div className="flex flex-col-reverse md:flex-row border-0 border-gray-500 gap-8 md:gap-16 lg:px-32" id="profile">
+    <div className="flex flex-col-reverse md:flex-row border-0 border-gray-500 gap-16 lg:px-32" id="profile">
       <div className="profile-desc flex flex-col border-0 border-red-500 gap-8 items-center md:items-start">
         <h1 className="text-5xl font-semibold">Hello! I&apos;m Raihan</h1>
         <p className="text-lg text-justify">
