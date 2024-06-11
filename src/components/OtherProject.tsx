@@ -4,14 +4,16 @@ import React from "react";
 import otherProjectData from "../../public/project/otherProject.json";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { motion } from "framer-motion";
 
 const OtherProject = () => {
+  const MotionCard = motion(Card)
   return (
     <div className="flex flex-col border-0 border-blue-500 items-center gap-8">
-      <h1 className="text-3xl font-bold">Small Project</h1>
+      <motion.h1 className="text-3xl font-bold" initial={{ x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>Small Project</motion.h1>
       <div className="flex flex-col md:flex-row gap-8">
         {otherProjectData.map((project, index) => (
-          <Card key={index} className="bg-gray-900 text-white rounded-2xl p-2" style={{ width: "20rem" }}>
+          <MotionCard key={index} className="bg-gray-900 text-white rounded-2xl p-2" style={{ width: "20rem" }} initial={{ y: -10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
             <Card.Body className="flex flex-col flex-grow">
               <Card.Title className="text-xl font-semibold">{project.name}</Card.Title>
               <Card.Subtitle className="text-gray-400">{project.company}</Card.Subtitle>
@@ -23,7 +25,7 @@ const OtherProject = () => {
                 See Repo
               </Button>
             </Card.Body>
-          </Card>
+          </MotionCard>
         ))}
       </div>
     </div>
