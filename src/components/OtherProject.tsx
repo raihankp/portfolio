@@ -7,13 +7,23 @@ import Button from "react-bootstrap/Button";
 import { motion } from "framer-motion";
 
 const OtherProject = () => {
-  const MotionCard = motion(Card)
+  const MotionCard = motion(Card);
   return (
     <div className="flex flex-col border-0 border-blue-500 items-center gap-8">
-      <motion.h1 className="text-3xl font-bold" initial={{ x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>Small Project</motion.h1>
+      <motion.h1 className="text-3xl font-bold" initial={{ x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }} viewport={{ once: true }}>
+        Small Project
+      </motion.h1>
       <div className="flex flex-col md:flex-row gap-8">
         {otherProjectData.map((project, index) => (
-          <MotionCard key={index} className="bg-gray-900 text-white rounded-2xl p-2" style={{ width: "20rem" }} initial={{ y: -10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
+          <MotionCard
+            key={index}
+            className="bg-gray-900 text-white rounded-2xl p-2"
+            style={{ width: "20rem" }}
+            initial={{ y: -10, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
             <Card.Body className="flex flex-col flex-grow">
               <Card.Title className="text-xl font-semibold">{project.name}</Card.Title>
               <Card.Subtitle className="text-gray-400">{project.company}</Card.Subtitle>
