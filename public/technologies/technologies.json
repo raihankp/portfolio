@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Next.js",
+    "image": "/technologies/nextjs-icon.png"
+  },
+  {
+    "name": "React.js",
+    "image": "/technologies/react-icon.png"
+  },
+  {
+    "name": "SpringBoot",
+    "image": "/technologies/springboot-icon.png"
+  },
+  {
+    "name": "Java",
+    "image": "/technologies/java-icon.png"
+  },
+  {
+    "name": "Django",
+    "image": "/technologies/django-icon.png"
+  },
+  {
+    "name": "Typescript",
+    "image": "/technologies/typescript-icon.png"
+  },
+  {
+    "name": "Tailwind CSS",
+    "image": "/technologies/tailwind-icon.png"
+  },
+  {
+    "name": "MySQL",
+    "image": "/technologies/mysql-icon.png"
+  },
+  {
+    "name": "PostgreSQL",
+    "image": "/technologies/postgresql-icon.png"
+  },
+  {
+    "name": "Google Cloud Platform",
+    "image": "/technologies/gcp-icon.png"
+  },
+  {
+    "name": "Google Compute Engine",
+    "image": "/technologies/computeengine-icon.png"
+  },
+  {
+    "name": "Google Cloud Run",
+    "image": "/technologies/cloudrun-icon.png"
+  }
+]

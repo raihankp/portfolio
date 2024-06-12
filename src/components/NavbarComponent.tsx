@@ -12,8 +12,8 @@ const NavbarComponent = () => {
           </a>
         </div>
         <div id="navbar-link" className="hidden md:flex md:flex-row gap-14">
-          <a href="#profile" className="text-xl">
-            Profile
+          <a href="#aboutme" className="text-xl">
+            About Me
           </a>
           <a href="#project" className="text-xl">
             Project
