@@ -10,7 +10,7 @@ const AboutMe = () => {
       <motion.h1 className="text-4xl font-bold" initial={{ y: -10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
         About Me
       </motion.h1>
-      <div className="flex flex-col gap-8 px-32">
+      <div className="flex flex-col gap-8 md:px-32">
         <div className="flex flex-col">
           <motion.h2 className="text-lg text-center" initial={{ y: -10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
             A 21 years old undergraduate student majoring in Computer Science, University of Indonesia. Interested in Software Engineer and Website Developer. Have the ability to be an honest, trustworthy, and reliable leader in a team,
