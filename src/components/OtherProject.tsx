@@ -17,7 +17,7 @@ const OtherProject = () => {
         {otherProjectData.map((project, index) => (
           <MotionCard
             key={index}
-            className="bg-gray-900 text-white rounded-2xl p-2"
+            className="bg-gray-900 text-white rounded-2xl p-2 hover:!scale-105 ease-in-out duration-300"
             style={{ width: "20rem" }}
             initial={{ y: -10, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
