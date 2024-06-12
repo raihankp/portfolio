@@ -15,7 +15,7 @@ const Profile = () => {
           Hello! I&apos;m Raihan
         </motion.h1>
         <motion.p className="text-lg" initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }}>
-          I'm passionate about <span className="font-bold text-blue-400">software engineering</span> and <span className="font-bold text-blue-400">web development</span>. With a strong foundation in creating dynamic and responsive web applications, I bring past project experience and a keen eye for detail to every project{" "}
+          I&apos;m passionate about <span className="font-bold text-blue-400">software engineering</span> and <span className="font-bold text-blue-400">web development</span>. With a strong foundation in creating dynamic and responsive web applications, I bring past project experience and a keen eye for detail to every project.
         </motion.p>
         <MotionButton variant="light" href="#contact" className="font-semibold px-4 py-2" initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }}>
           Contact Me!
