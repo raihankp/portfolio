@@ -9,12 +9,12 @@ interface box {
 }
 
 const SortingVisualizerPage = () => {
-    const [array, setArray] = useState<box[]>([]);
+  const [array, setArray] = useState<box[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // 1000 ms = 1 s
   // source: https://stackoverflow.com/a/44476626
-  const timer = () => new Promise((res) => setTimeout(res, 2));
+  const timer = () => new Promise((res) => setTimeout(res, 10));
 
   const generateArray = () => {
     setArray([]);
@@ -159,42 +159,42 @@ const SortingVisualizerPage = () => {
     const length = array.length;
     let arrayHelper = [...array]; // clone the array
 
-    for(let i = 0; i < length-1; i++) {
-      let minValueIndex = i
-      arrayHelper[i].color = "yellow"   // Set color of the index that will be compared
+    for (let i = 0; i < length - 1; i++) {
+      let minValueIndex = i;
+      arrayHelper[i].color = "yellow"; // Set color of the index that will be compared
 
       // loop the remaning array
-      for (let j = i+1; j < length; j++) {
+      for (let j = i + 1; j < length; j++) {
         // set the color before to blue again bcs it was yellow if not the minimum
-        if (j-1 !== i && minValueIndex !== j-1) {
-          arrayHelper[j-1].color = "blue"
+        if (j - 1 !== i && minValueIndex !== j - 1) {
+          arrayHelper[j - 1].color = "blue";
         }
 
         // Check minimum value and change the index if it is the minimum
         if (arrayHelper[j].value < arrayHelper[minValueIndex].value) {
           // set the prev minValueIndex color to be blue again
-          arrayHelper[minValueIndex].color = "blue"
+          arrayHelper[minValueIndex].color = "blue";
 
           // set the new minValueIndex and set the color to the new minValueIndex
-          minValueIndex = j
-          arrayHelper[minValueIndex].color = "green"
+          minValueIndex = j;
+          arrayHelper[minValueIndex].color = "green";
           setArray((prev) => [...arrayHelper]);
           await timer();
-          continue  // continue the loop
+          continue; // continue the loop
         }
 
         // set color to yellow if not satisfy the condition above
-        arrayHelper[j].color = "yellow"
+        arrayHelper[j].color = "yellow";
         setArray((prev) => [...arrayHelper]);
         await timer();
 
         // set the last array color to blue again
         if (j == length - 1) {
-          arrayHelper[j].color = "blue"
+          arrayHelper[j].color = "blue";
           setArray((prev) => [...arrayHelper]);
           await timer();
         }
-        continue  // continue the loop
+        continue; // continue the loop
       }
 
       // Swap the minimum with i
@@ -203,25 +203,122 @@ const SortingVisualizerPage = () => {
       arrayHelper[minValueIndex] = boxTemp;
 
       // set the minimum array color to turquoise
-      arrayHelper[i].color = "turquoise"
-      
+      arrayHelper[i].color = "turquoise";
+
       // set the last to turquoise
       if (i === length - 2) {
-        arrayHelper[i+1].color = "turquoise"
+        arrayHelper[i + 1].color = "turquoise";
       }
       setArray((prev) => [...arrayHelper]);
       await timer();
     }
 
+    setIsLoading(false);
+  };
 
-    setIsLoading(false)
+  const quickSort = async () => {
+    setIsLoading(true);
+
+    const length = array.length;
+    // let arrayHelper = [...array]; // clone the array
+    const arrayPartitionHelper = JSON.parse(JSON.stringify(array));
+    await quickSortMain(arrayPartitionHelper, 0, length - 1);
+
+    setIsLoading(false);
+  };
+
+  const quickSortMain = async (arrayPartitionHelper: box[], low: number, high: number) => {
+    console.log("quick sort main func => low:", low, " high:", high);
+    if (low < high) {
+      // pi is the partitioning index, arr[pi] is now at the right place
+      let partitionIndex: number = await partitionQuickSort(arrayPartitionHelper, low, high);
+      console.log("main array after partition:", arrayPartitionHelper);
+
+      
+      // Separately sort elements before partition and after partition
+      await quickSortMain(arrayPartitionHelper, low, partitionIndex - 1);
+      await quickSortMain(arrayPartitionHelper, partitionIndex + 1, high);
+
+      // Color the pivot elementafter the subarray is already sorted, meaning this pivot will be in the correct position
+      arrayPartitionHelper[partitionIndex].color = "turquoise";
+      setArray((prev) => [...arrayPartitionHelper]);
+      await timer();
+    } else {
+      // in this condition, low and high will be either the same, or low is greater than high
+      // so, to avoid uncaught (index too big), we will check whether the low is equals the length or not
+      // if it satisfy, then we dont need to change the color
+      if (low < arrayPartitionHelper.length) {
+        console.log("change color to turquoise");
+        arrayPartitionHelper[low].color = "turquoise";
+        if (high < low && high !== -1) arrayPartitionHelper[high].color = "turquoise";
+        setArray((prev) => [...arrayPartitionHelper]);
+        await timer();
+      }
+    }
+  };
+
+  const partitionQuickSort = async (arrayPartitionHelper: box[], low: number, high: number) => {
+    let swapped: boolean = false;
+    console.log("partition quick sort func => low:", low, " high:", high);
+    // let arrayPartitionHelper: box[] = JSON.parse(JSON.stringify(array)); // clone the array
+    // console.log("early array in partition:", arrayPartitionHelper);
+
+    // choose last value as pivot
+    let pivot: box = arrayPartitionHelper[high];
+    pivot.color = "purple";
+    console.log("pivot:", pivot);
+
+    // Index of smaller element and indicates the right position of pivot found so far
+    let i = low - 1;
+
+    for (let j = low; j <= high - 1; j++) {
+      // If current element is smaller than the pivot
+      if (arrayPartitionHelper[j].value < pivot.value) {
+        // console.log("masuk kan", arrayPartitionHelper[j].value, " ", pivot.value);
+        // console.log("array helper before swap:", arrayPartitionHelper);
+        
+        // Increment index of smaller element
+        i++;
+        console.log("sebelum => i value:", arrayPartitionHelper[i].value, " j value:", arrayPartitionHelper[j].value);
+        arrayPartitionHelper[i].color = "green";
+        arrayPartitionHelper[j].color = "yellow";
+        setArray((prev) => [...arrayPartitionHelper]);
+        await timer();
+
+        [arrayPartitionHelper[i], arrayPartitionHelper[j]] = [arrayPartitionHelper[j], arrayPartitionHelper[i]]; // Swap elements
+        swapped = true;
+        arrayPartitionHelper[i].color = "green";
+        arrayPartitionHelper[j].color = "yellow";
+        console.log("sesudah => i value:", arrayPartitionHelper[i].value, " j value:", arrayPartitionHelper[j].value);
+        // console.log("array helper after swap:", arrayPartitionHelper);
+        setArray((prev) => [...arrayPartitionHelper]);
+        await timer();
+
+        arrayPartitionHelper[i].color = "blue";
+        arrayPartitionHelper[j].color = "blue";
+        setArray((prev) => [...arrayPartitionHelper]);
+        continue;
+      }
+      arrayPartitionHelper[j].color = "yellow";
+      setArray((prev) => [...arrayPartitionHelper]);
+      await timer();
+
+      arrayPartitionHelper[j].color = "blue";
+      setArray((prev) => [...arrayPartitionHelper]);
+    }
+    [arrayPartitionHelper[i + 1], arrayPartitionHelper[high]] = [arrayPartitionHelper[high], arrayPartitionHelper[i + 1]]; // Swap pivot to its correct position
+
+    pivot.color = "blue";
+    setArray((prev) => [...arrayPartitionHelper]);
+    await timer();
+    return i + 1; // Return the partition index
   };
 
   return (
     <div className="flex flex-col border-0 border-gray-600 items-center gap-6 py-8 md:px-16 rounded-2xl" id="sortingpage">
       <h1 className="text-4xl font-bold">Sorting Visualization</h1>
-      <div className="flex flex-col border-0 gap-8 md:px-32">
-        <div className="flex flex-row gap-2 justify-center">
+      <div className="flex flex-col border-0 gap-8 md:px-32 items-center">
+        <div className="flex flex-row flex-wrap gap-2 justify-center">
           <button onClick={generateArray} className="bg-white text-black py-1 px-4 rounded-lg" disabled={isLoading}>
             Generate New Array!
           </button>
@@ -234,6 +331,9 @@ const SortingVisualizerPage = () => {
           <button onClick={selectionSort} className="bg-green-500 text-white px-4 rounded-lg" disabled={isLoading}>
             Start Selection Sort
           </button>
+          <button onClick={quickSort} className="bg-green-500 text-white px-4 rounded-lg" disabled={isLoading}>
+            Start Quick Sort
+          </button>
         </div>
         <div className="flex flex-rows gap-1">
           {array.map((box) => (
@@ -244,7 +344,7 @@ const SortingVisualizerPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SortingVisualizerPage
+export default SortingVisualizerPage;
