@@ -217,6 +217,12 @@ const SortingVisualizerPage = () => {
   };
 
   const quickSort = async () => {
+    // PROBLEM:
+    // https://stackoverflow.com/questions/54069253/the-usestate-set-method-is-not-reflecting-a-change-immediately
+    // The problem, is when logging the arrayPartitionHelper just after call the partition function,
+    // the logged array is already partitioned, and if we log again when swapping, the logged array is still the same (already partitioned)
+    // Until now, i still dont know why
+    
     setIsLoading(true);
 
     const length = array.length;
