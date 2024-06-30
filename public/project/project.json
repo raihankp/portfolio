@@ -14,5 +14,13 @@
     "tech-stack": ["React.js", "Next.js", "Spring Boot", "Tailwind CSS", "Chakra UI", "Google Compute Engine"],
     "images": ["/project/lontar-reborn/home.png", "/project/lontar-reborn/detail-koleksi.png", "/project/lontar-reborn/reader-online.png", "/project/lontar-reborn/reading-list.png"],
     "link": "https://lontar-digital-mti.cs.ui.ac.id"
+  },
+  {
+    "name": "Sorting Visualization",
+    "company": "Personal Project",
+    "detail": "Sorting Visualization website to understand how a sorting algorithm works in a visual way.",
+    "tech-stack": ["React.js", "Next.js", "Fast API", "Tailwind CSS", "Google Cloud Run"],
+    "images": ["/project/sorting/sorting-visualization-page.png"],
+    "link": "/sorting"
   }
 ]

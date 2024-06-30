@@ -13,8 +13,8 @@ const Project = () => {
         Best Projects
       </motion.h1>
       {projectData.map((project, index) => (
-        <div key={index} className={`flex ${index / 2 === 0 ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse"} border-0 border-green-500 gap-4 md:gap-16`}>
-          <motion.div className="flex flex-1 flex-col gap-2" initial={index / 2 === 0 ? { x: -50, opacity: 0 } : { x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
+        <div key={index} className={`flex ${(index + 1) % 2 ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse"} border-0 border-green-500 gap-4 md:gap-16`}>
+          <motion.div className="flex flex-1 flex-col gap-2" initial={(index + 1) % 2 === 1 ? { x: -50, opacity: 0 } : { x: 50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
             {project.link === "" ? (
               <h2 className="text-3xl font-medium">{project.name}</h2>
             ) : (
@@ -28,7 +28,7 @@ const Project = () => {
             <h4 className="text-lg">{project.detail}</h4>
             <h4 className="text-gray-400 text-base">Tech Stack: {project["tech-stack"].join(", ")}</h4>
           </motion.div>
-          <motion.div className="flex flex-1" initial={index / 2 === 0 ? { x: 50, opacity: 0 } : { x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
+          <motion.div className="flex flex-1" initial={(index + 1) % 2 === 1 ? { x: 50, opacity: 0 } : { x: -50, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
             <CarouselComponent images={project.images} />
           </motion.div>
         </div>
