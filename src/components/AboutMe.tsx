@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import technologies from "../../public/technologies/technologies.json";
+import Image from "next/image";
 
 const AboutMe = () => {
   return (
@@ -31,7 +32,7 @@ const AboutMe = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <img src={technology.image} alt={technology.name} className="w-10 h-10 bg-cover" />
+                <Image src={technology.image} alt={technology.name} width={100} height={100} className="w-10 h-10" />
                 <h3 className="text-slate-300 font-semibold">{technology.name}</h3>
               </motion.div>
             ))}

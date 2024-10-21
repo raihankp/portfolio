@@ -5,6 +5,7 @@ import CarouselComponent from "./Carousel";
 import projectData from "../../public/project/project.json";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const Project = () => {
   return (
@@ -20,7 +21,7 @@ const Project = () => {
             ) : (
               <Link href={project.link} target="_blank" className="flex flex-row items-center gap-2 w-fit hover:scale-105 ease-in-out duration-300">
                 <h2 className="text-3xl font-medium">{project.name}</h2>
-                <img src="/open-icon.png" alt="Open" className="w-10 h-10" />
+                <Image src="/open-icon.png" width={100} height={100} alt="Open" className="w-10 h-10" />
               </Link>
             )}
 

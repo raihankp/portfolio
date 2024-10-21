@@ -15,13 +15,13 @@ const Contact = () => {
       </motion.h1>
       <div className="flex flex-row gap-16 items-center">
         <MotionLink href="https://github.com/raihankp" target="_blank" initial={{ y: -10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}>
-          <img src="/contact/github.png" alt="Github" className="h-8 w-8 d-block rounded-full hover:scale-125 ease-in-out duration-300" />
+          <Image src="/contact/github.png" alt="Github" width={100} height={100} className="h-8 w-8 d-block rounded-full hover:scale-125 ease-in-out duration-300" />
         </MotionLink>
         <MotionLink href="https://gitlab.cs.ui.ac.id/raihan.kus" target="_blank" initial={{ y: -10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} viewport={{ once: true }}>
-          <img src="/contact/gitlab.jpg" alt="Gitlab" className="h-8 w-8 d-block rounded-full hover:scale-125 ease-in-out duration-300" />
+          <Image src="/contact/gitlab.jpg" alt="Gitlab" width={100} height={100} className="h-8 w-8 d-block rounded-full hover:scale-125 ease-in-out duration-300" />
         </MotionLink>
         <MotionLink href="http://www.linkedin.com/in/raihankusputranto" target="_blank" initial={{ y: -10, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} viewport={{ once: true }}>
-          <img src="/contact/linkedin.png" alt="Linkedin" className="h-8 w-8 d-block rounded-full bg-white hover:scale-125 ease-in-out duration-300" />
+          <Image src="/contact/linkedin.png" alt="Linkedin" width={100} height={100} className="h-8 w-8 d-block rounded-full bg-white hover:scale-125 ease-in-out duration-300" />
         </MotionLink>
       </div>
     </div>
