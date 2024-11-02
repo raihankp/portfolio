@@ -4,6 +4,9 @@ import React from "react";
 import Image from "next/image";
 import Button from "react-bootstrap/Button";
 import { motion } from "framer-motion";
+import nextConfig from "../../next.config.mjs";
+
+const { basePath } = nextConfig;
 
 const Profile = () => {
   const MotionButton = motion(Button);
@@ -23,7 +26,7 @@ const Profile = () => {
       </div>
       <div className="profile-image border-0 border-green-500 flex flex-col items-center md:items-start">
         <div className="relative w-72 h-72">
-          <MotionImage src="profile-pict.jpg" fill={true} className="rounded-full" alt="Profile Pict" initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0 }} />
+          <MotionImage src={`${basePath}/profile-pict.jpg"`} fill={true} className="rounded-full" alt="Profile Pict" initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0 }} />
         </div>
       </div>
     </div>
